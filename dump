@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+gtkwave obj_dir/sim.vcd -a wrap2.gtkw 

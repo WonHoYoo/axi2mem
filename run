@@ -1,0 +1,11 @@
+#!/bin/bash
+
+rm -rf AXIRAM obj_dir axi2mem
+
+verilator --trace -sv +1800-2005ext+sv -cc AXIRAM.sv axi2mem_rmw.sv axi_bus.sv config.sv sp_ram.sv --top-module AXIRAM -Wno-CASEINCOMPLETE -Wno-WIDTH
+
+make -f VAXIRAM.mk -C obj_dir
+
+g++ -I /usr/share/verilator/include -I obj_dir/  /usr/share/verilator/include/verilated.cpp /usr/share/verilator/include/verilated_vcd_c.cpp AXIRAM.cpp ./obj_dir/VAXIRAM__ALL.a -o axi2mem
+
+./axi2mem

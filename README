@@ -1,0 +1,13 @@
+This module is based on axi_mem_if module. Please check the initial design 
+from the below link.
+
+https://github.com/pulp-platform/axi_mem_if
+
+The AXIRAM has below feature
+
+1. Normal AXI4 Operation -> AXI4 Read, Write Operation 
+2. With AXI4 Write operation, there is read-modify-write operation. 
+In modify step, it supports AXI4 Strobe Signal.
+
+
+To run simulation, please use run script
